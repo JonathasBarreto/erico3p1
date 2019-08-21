@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
     args[0] = "ps"
     args[1] = "-ael"
-    args[2] = " NULL"
+    args[2] =  NULL
 
     while (should_run)
     {
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
         }
         else if (pid == 0)/* ()O processo-filho invocará execpv()*/
         {
-            execvp(argv[0], &argv);
+            execvp(argv[0], argv);
             fprintf(stderr, "Can't execute\n", argv[1]);
 
         }
