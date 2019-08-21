@@ -4,18 +4,27 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/wait.h> 
+#include <string.h>
 
 #define MAX_LINE 80 /*comando de tamanho maximo */
 
-int execvp(char *filename, char *argv[]); 
+int execvp(char *command, char *params[]); 
 
 int main(int argc, char *argv[])
 {
     char *args[MAX_LINE/2 + 1]; /* argumentos de linha de comando */
     int should_run = 1; /* flag para determinar quando encerrar o programa */
     pid_t pid;
-
+    
+    scanf("%s", str);
+    char * pch;
+ 
+    pch = strtok (str," "); //vai separar a string por espaço
     pid = fork(); /*(1) Criar um processo filho usando fork() */
+
+    args[0] = "ps"
+    args[1] = "-ael"
+    args[2] = " NULL"
 
     while (should_run)
     {
@@ -33,7 +42,7 @@ int main(int argc, char *argv[])
         }
         else if (pid == 0)/* ()O processo-filho invocará execpv()*/
         {
-            execvp(argv[1], &argv[1]);
+            execvp(argv[0], &argv);
             fprintf(stderr, "Can't execute\n", argv[1]);
 
         }
