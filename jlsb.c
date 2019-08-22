@@ -16,15 +16,11 @@ int main(int argc, char *argv[])
     int should_run = 1; /* flag para determinar quando encerrar o programa */
     pid_t pid;
     
-    scanf("%s", str);
+    scanf("%s", args);
     char * pch;
  
-    pch = strtok (str," "); //vai separar a string por espaço
+    pch = strtok (args," "); //vai separar a string por espaço
     pid = fork(); /*(1) Criar um processo filho usando fork() */
-
-    args[0] = "ps"
-    args[1] = "-ael"
-    args[2] =  NULL
 
     while (should_run)
     {
